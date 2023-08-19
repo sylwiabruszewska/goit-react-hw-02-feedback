@@ -21,9 +21,15 @@ export default class App extends Component {
     bad: 0,
   };
 
-  addNewFeedback() {
-    return console.log('click');
-  }
+  addNewFeedback = event => {
+    const button = event.target;
+    const category = button.textContent.toLowerCase();
+    const incValue = 1;
+
+    this.setState(prevState => ({
+      [category]: prevState[category] + incValue,
+    }));
+  };
 
   render() {
     const { good, neutral, bad } = this.state;
