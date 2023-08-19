@@ -1,14 +1,44 @@
 import styled from 'styled-components';
+import { Component } from 'react';
+import Section from './Section';
+import Button from './Button';
+import Statistics from './Statistics';
 
 const StyledApp = styled.div`
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 40px;
   color: #010101;
 `;
 
-export const App = () => {
-  return <StyledApp>React homework template</StyledApp>;
-};
+export class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
+  addNewFeedback() {
+    return console.log('click');
+  }
+
+  render() {
+    const { good, neutral, bad } = this.state;
+
+    return (
+      <StyledApp>
+        <Section title="Please leave feedback">
+          <Button handler={this.addNewFeedback}>Good</Button>
+          <Button handler={this.addNewFeedback}>Neutral</Button>
+          <Button handler={this.addNewFeedback}>Bad</Button>
+        </Section>
+        <Section title="Statistics">
+          <Statistics good={good} neutral={neutral} bad={bad}></Statistics>
+        </Section>
+      </StyledApp>
+    );
+  }
+}
