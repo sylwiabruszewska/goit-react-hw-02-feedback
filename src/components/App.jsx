@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Component } from 'react';
 import Section from './Section';
-import Button from './Button';
 import Statistics from './Statistics';
+import FeedbackOptions from './FeedbackOptions';
 
 const StyledApp = styled.div`
   height: 100vh;
@@ -45,9 +45,10 @@ export default class App extends Component {
     return (
       <StyledApp>
         <Section title="Please leave feedback">
-          <Button handler={this.addNewFeedback}>Good</Button>
-          <Button handler={this.addNewFeedback}>Neutral</Button>
-          <Button handler={this.addNewFeedback}>Bad</Button>
+          <FeedbackOptions
+            options={['Good', 'Neutral', 'Bad']}
+            onLeaveFeedback={this.addNewFeedback}
+          />
         </Section>
         <Section title="Statistics">
           <Statistics
