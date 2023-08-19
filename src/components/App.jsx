@@ -31,6 +31,14 @@ export default class App extends Component {
     }));
   };
 
+  countTotalFeedback = () => {
+    const { ...feedbackValues } = this.state;
+    return Object.values(feedbackValues).reduce(
+      (total, value) => total + value,
+      0
+    );
+  };
+
   render() {
     const { good, neutral, bad } = this.state;
 
@@ -42,7 +50,12 @@ export default class App extends Component {
           <Button handler={this.addNewFeedback}>Bad</Button>
         </Section>
         <Section title="Statistics">
-          <Statistics good={good} neutral={neutral} bad={bad}></Statistics>
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+          ></Statistics>
         </Section>
       </StyledApp>
     );
