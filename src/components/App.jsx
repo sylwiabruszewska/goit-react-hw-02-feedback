@@ -6,13 +6,12 @@ import FeedbackOptions from './FeedbackOptions';
 import Notification from './Notification';
 
 const StyledApp = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  color: #010101;
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  color: #313131;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 export default class App extends Component {
