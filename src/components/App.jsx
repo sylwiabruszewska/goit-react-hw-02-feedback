@@ -14,7 +14,7 @@ const StyledApp = styled.div`
   color: #010101;
 `;
 
-export class App extends Component {
+export default class App extends Component {
   state = {
     good: 0,
     neutral: 0,
