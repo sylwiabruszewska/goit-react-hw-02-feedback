@@ -22,7 +22,7 @@ export default class App extends Component {
   };
 
   addNewFeedback = event => {
-    const button = event.target;
+    const button = event.currentTarget;
     const category = button.textContent.toLowerCase();
     const incValue = 1;
 
