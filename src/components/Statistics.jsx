@@ -7,7 +7,7 @@ const StyledList = styled.ul`
 `;
 
 export default function Statistics(props) {
-  const { good, neutral, bad, total } = props;
+  const { good, neutral, bad, total, positivePercentage } = props;
 
   return (
     <StyledList>
@@ -22,6 +22,9 @@ export default function Statistics(props) {
       </li>
       <li>
         Total:<span> {total}</span>
+      </li>
+      <li>
+        Positive Feedback:<span> {positivePercentage || '0'} %</span>
       </li>
     </StyledList>
   );
