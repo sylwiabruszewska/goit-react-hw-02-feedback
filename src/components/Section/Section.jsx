@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   StyledSection,
   StyledSectionHeading,
@@ -12,3 +13,8 @@ export default function Section({ title, children }) {
     </StyledSection>
   );
 }
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};

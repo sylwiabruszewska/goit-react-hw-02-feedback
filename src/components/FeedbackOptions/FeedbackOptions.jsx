@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { StyledIcon } from './FeedbackOptions.styled';
 import { faSmile, faMeh, faFrown } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
@@ -22,3 +23,8 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
     </>
   );
 }
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
