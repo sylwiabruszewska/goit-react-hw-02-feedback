@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { StyledList } from './Statistics.styled';
+import { StyledList, StyledSpan } from './Statistics.styled';
 
 export default function Statistics(props) {
   const { good, neutral, bad, total, positivePercentage } = props;
@@ -7,19 +7,20 @@ export default function Statistics(props) {
   return (
     <StyledList>
       <li>
-        Good:<span> {good}</span>
+        Good:<StyledSpan> {good}</StyledSpan>
       </li>
       <li>
-        Neutral:<span> {neutral}</span>
+        Neutral:<StyledSpan> {neutral}</StyledSpan>
       </li>
       <li>
-        Bad:<span> {bad}</span>
+        Bad:<StyledSpan> {bad}</StyledSpan>
       </li>
       <li>
-        Total:<span> {total}</span>
+        Total:<StyledSpan> {total}</StyledSpan>
       </li>
       <li>
-        Positive Feedback:<span> {positivePercentage || '0'} %</span>
+        Positive Feedback:
+        <StyledSpan> {positivePercentage || '0'} %</StyledSpan>
       </li>
     </StyledList>
   );
