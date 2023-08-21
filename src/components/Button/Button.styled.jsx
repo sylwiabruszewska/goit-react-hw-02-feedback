@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,11 +21,3 @@ const StyledButton = styled.button`
     color: #fff;
   }
 `;
-
-export default function Button({ handler, children }) {
-  return (
-    <StyledButton type="button" onClick={handler}>
-      {children}
-    </StyledButton>
-  );
-}

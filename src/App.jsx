@@ -1,18 +1,12 @@
-import styled from 'styled-components';
 import { Component } from 'react';
-import Section from './Section';
-import Statistics from './Statistics';
-import FeedbackOptions from './FeedbackOptions';
-import Notification from './Notification';
 
-const StyledApp = styled.div`
-  background-color: #fff;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 10px;
-  color: #313131;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-`;
+import {
+  Container,
+  FeedbackOptions,
+  Notification,
+  Section,
+  Statistics,
+} from './components/index';
 
 export default class App extends Component {
   state = {
@@ -44,7 +38,7 @@ export default class App extends Component {
     const totalFeedback = this.countTotalFeedback();
 
     return (
-      <StyledApp>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['Good', 'Neutral', 'Bad']}
@@ -64,7 +58,7 @@ export default class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </StyledApp>
+      </Container>
     );
   }
 }

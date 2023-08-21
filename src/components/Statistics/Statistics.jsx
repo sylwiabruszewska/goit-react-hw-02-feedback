@@ -1,10 +1,4 @@
-import styled from 'styled-components';
-
-const StyledList = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-`;
+import { StyledList } from './Statistics.styled';
 
 export default function Statistics(props) {
   const { good, neutral, bad, total, positivePercentage } = props;

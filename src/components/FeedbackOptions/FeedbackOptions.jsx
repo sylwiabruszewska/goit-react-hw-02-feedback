@@ -1,16 +1,6 @@
-import styled from 'styled-components';
-import Button from './Button';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { StyledIcon } from './FeedbackOptions.styled';
 import { faSmile, faMeh, faFrown } from '@fortawesome/free-regular-svg-icons';
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  color: #666666;
-
-  button:hover & {
-    color: #fff;
-  }
-`;
+import Button from '../Button/Button';
 
 const getIcon = icon => <StyledIcon icon={icon} size="2xl" />;
 
